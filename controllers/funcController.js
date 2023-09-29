@@ -37,6 +37,11 @@ exports.reg = (req, res) => {
         })
 
 }
+exports.viewalldetails=(req, res) => {
+    UserDetailsModel.find({}).then((data) => {
+        res.send(data)
+    })
+}
 exports.login = (req, res) => {
     const username = req.body.username;
     console.log(username)
